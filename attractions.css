@@ -1,0 +1,435 @@
+ /* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('images/np.jpeg'); /* Replace with your image path */
+    background-size: cover;          /* Make it cover the whole page */
+    background-position: center;     /* Center the image */
+    background-repeat: no-repeat;    /* Prevent repeating */
+    background-attachment: fixed;
+     
+}
+h1{
+    text-align: center;
+    font-weight: bolder;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+/* Parks container */
+.attractions-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+/* Individual park card */
+.park-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.park-card:hover {
+    transform: scale(1.03);
+}
+
+.park-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.view-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+
+.view-btn:hover {
+      background-color: #1e8449;
+}
+
+/* Big Park Image */
+.big-park-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Rating stars */
+.rating-box {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #f1c40f;
+}
+
+.stars {
+    margin-right: 5px;
+}
+
+/* Reviews section */
+.reviews-container {
+    margin-top: 20px;
+}
+
+.review-card {
+    background-color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.review-card small {
+    display: block;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* ---------- Rating Dropdown Styling ---------- */
+.rating-select {
+    font-size: 18px;
+    color: gold;
+    padding: 8px 12px;
+    border: 2px solid #f3c400;
+    border-radius: 6px;
+    background-color: #fffbe6;
+    cursor: pointer;
+}
+
+.rating-select option {
+    color: gold;
+    background-color: white;
+    font-size: 18px;
+}
+
+/* Review form */
+form {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form textarea, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+form button {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #1e8449;
+}
+
+/* Most Reviewed Parks Widget */
+.most-reviewed-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.most-reviewed-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.most-reviewed-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.most-reviewed-card h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+.most-reviewed-card span {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Optional map container */
+.map-container {
+    margin-top: 20px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* ---------- park_details.php specific styles ---------- */
+
+/* Make page content stand out against background */
+.attractions-details-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    color: #333;
+}
+
+/* Back link */
+.attractions-details-container a[href^="national_parks.php"] {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.attractions-details-container a[href^="national_parks.php"]:hover {
+    color: #1e8449;
+}
+
+/* Headings inside park_details */
+.attractions-details-container h1,
+.attractions-details-container h2,
+.attractions-details-container h3 {
+    color: #2c3e50;
+}
+
+/* Big Park Image */
+.attractions-details-container .attractions-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Map container */
+.attractions-details-container .map-container iframe {
+    width: 100%;
+    height: 320px;
+    border-radius: 8px;
+    border: 0;
+    margin: 20px 0;
+}
+
+/* Average Rating */
+.attractions-details-container .rating-box {
+    font-size: 20px;
+    color: #f1c40f;
+    margin: 15px 0;
+}
+
+/* Review Form */
+.attractions-details-container form {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin-top: 20px;
+}
+
+.attractions-details-container form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.attractions-details-container form select,
+.attractions-details-container form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.attractions-details-container form button {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.attractions-details-container form button:hover {
+    background-color: #1e8449;
+}
+
+/* Reviews Section */
+.attractions-details-container .reviews-container {
+    margin-top: 25px;
+}
+
+.attractions-details-container .review-card {
+    background-color: #fff;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    color: #333;
+}
+
+.attractions-details-container .review-card small {
+    display: block;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* Most Reviewed Parks Widget */
+.attractions-details-container .most-reviewed-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.attractions-details-container .most-reviewed-card {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    width: 180px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.attractions-details-container .most-reviewed-card:hover {
+    transform: scale(1.05);
+}
+
+.attractions-details-container .most-reviewed-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.attractions-details-container .most-reviewed-card h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+.attractions-details-container .most-reviewed-card span {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media screen and (max-width: 768px) {
+    .attractions-details-container {
+        padding: 15px;
+    }
+
+    .attractions-details-container .big-park-image {
+        max-height: 300px;
+    }
+
+    .attractions-details-container .map-container iframe {
+        height: 250px;
+    }
+
+    .attractions-details-container .most-reviewed-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .attractions-details-container .most-reviewed-card {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .attractions-details-container form,
+    .attractions-details-container .reviews-container {
+        width: 95%;
+    }
+
+    .attractions-details-container form button {
+        width: 100%;
+    }
+}
+
+/* Mobile & tablet responsiveness */
+@media screen and (max-width: 768px) {
+
+    /* Parks container: stack cards vertically */
+    .attractions-details-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Individual park cards take full width on small screens */
+    .park-card {
+        width: 90%;
+    }
+
+    /* Most Reviewed Parks widget: stack vertically */
+    .most-reviewed-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .most-reviewed-card {
+        width: 90%;
+    }
+
+    /* Big park image */
+    .big-park-image {
+        max-height: 300px;
+    }
+
+    /* Map container */
+    .map-container iframe {
+        height: 250px;
+    }
+
+    /* Reviews and form */
+    .reviews-container, form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    form button {
+        width: 100%;
+    }
+}
