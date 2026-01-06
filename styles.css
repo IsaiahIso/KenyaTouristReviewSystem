@@ -231,3 +231,197 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+/* Most Reviewed & Recommended Sections */
+.most-reviewed, .top-restaurants, .recommended {
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+.most-reviewed {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
+}
+
+.top-restaurants {
+    background: linear-gradient(135deg, #f3e5f5 0%, #ffffff 100%);
+}
+
+.recommended {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #7f8c8d;
+    font-size: 1.1em;
+}
+
+/* Card Badges */
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.card-badge[data-badge="Recommended"] {
+    background: #3498db;
+}
+
+.card-badge[data-badge="Cultural Gem"] {
+    background: #9b59b6;
+}
+
+.card-badge[data-badge="Adventure"] {
+    background: #27ae60;
+}
+
+.card-badge[data-badge="Local Favorite"] {
+    background: #f39c12;
+}
+
+.card-badge[data-badge="Trending"] {
+    background: #e74c3c;
+}
+
+.card-badge[data-badge="Hidden Gem"] {
+    background: #34495e;
+}
+
+/* Rating Styles */
+.rating {
+    color: #f1c40f;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.rating-text {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+/* Tab Styles for Recommendations */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.tab-btn {
+    padding: 12px 30px;
+    background: white;
+    border: 2px solid #3498db;
+    color: #3498db;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-btn.active {
+    background: #3498db;
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background: #e3f2fd;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+/* Button Styles */
+.btn-small {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-small:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    color: #3498db;
+    text-decoration: none;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin: 0 10px;
+}
+
+.btn-secondary:hover {
+    background: #3498db;
+    color: white;
+}
+
+.section-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-header h2 {
+        font-size: 1.8em;
+    }
+    
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 200px;
+    }
+    
+    .section-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-secondary {
+        margin: 5px 0;
+        width: 90%;
+        max-width: 300px;
+    }
+}

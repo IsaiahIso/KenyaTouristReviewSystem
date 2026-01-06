@@ -110,6 +110,230 @@
     </div>
 </section>
 
+  <!-- Most Reviewed Attractions Section -->
+<section id="most-reviewed" class="most-reviewed">
+    <div class="section-header">
+        <h2>🔥 Most Reviewed Attractions</h2>
+        <p>Discover what fellow travelers are raving about</p>
+    </div>
+    
+    <div class="cards">
+        <!-- This content will be populated by PHP -->
+        <?php
+        // PHP code to fetch most reviewed attractions from database
+        // Example structure:
+        /*
+        require_once 'config/database.php';
+        
+        try {
+            $stmt = $pdo->query("
+                SELECT a.*, COUNT(r.id) as review_count, AVG(r.rating) as avg_rating
+                FROM attractions a 
+                LEFT JOIN reviews r ON a.id = r.attraction_id 
+                GROUP BY a.id 
+                ORDER BY review_count DESC, avg_rating DESC 
+                LIMIT 3
+            ");
+            
+            while($attraction = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo '<div class="card">';
+                echo '<img src="' . htmlspecialchars($attraction['image_url']) . '" alt="' . htmlspecialchars($attraction['name']) . '">';
+                echo '<div class="card-badge">' . $attraction['review_count'] . ' reviews</div>';
+                echo '<h3>' . htmlspecialchars($attraction['name']) . '</h3>';
+                echo '<div class="rating">';
+                // Display star rating
+                $rating = round($attraction['avg_rating'], 1);
+                for($i = 1; $i <= 5; $i++) {
+                    if($i <= floor($rating)) {
+                        echo '★';
+                    } elseif($i == ceil($rating) && fmod($rating, 1) >= 0.5) {
+                        echo '½';
+                    } else {
+                        echo '☆';
+                    }
+                }
+                echo '<span class="rating-text">' . $rating . '/5</span>';
+                echo '</div>';
+                echo '<p>' . htmlspecialchars(substr($attraction['description'], 0, 100)) . '...</p>';
+                echo '<a href="attraction_details.php?id=' . $attraction['id'] . '" class="btn-small">View Details</a>';
+                echo '</div>';
+            }
+        } catch(PDOException $e) {
+            echo '<p>Unable to load attractions at this time.</p>';
+        }
+        */
+        ?>
+        
+        <!-- Fallback static content if PHP not ready -->
+        <div class="card">
+            <img src="images/maasai-mara.jpeg" alt="Maasai Mara">
+            <div class="card-badge">128 reviews</div>
+            <h3>Maasai Mara</h3>
+            <div class="rating">
+                ★★★★★ <span class="rating-text">4.8/5</span>
+            </div>
+            <p>Top-rated for wildlife viewing and safari experiences.</p>
+            <a href="attraction_details.php?id=1" class="btn-small">View Details</a>
+        </div>
+        <div class="card">
+            <img src="images/diani.jpeg" alt="Diani Beach">
+            <div class="card-badge">96 reviews</div>
+            <h3>Diani Beach</h3>
+            <div class="rating">
+                ★★★★☆ <span class="rating-text">4.3/5</span>
+            </div>
+            <p>Famous for its white sand beaches and water sports.</p>
+            <a href="attraction_details.php?id=3" class="btn-small">View Details</a>
+        </div>
+        <div class="card">
+            <img src="images/nairobi-national-park.jpeg" alt="Nairobi National Park">
+            <div class="card-badge">84 reviews</div>
+            <h3>Nairobi National Park</h3>
+            <div class="rating">
+                ★★★★☆ <span class="rating-text">4.2/5</span>
+            </div>
+            <p>Unique wildlife park within the city limits.</p>
+            <a href="attraction_details.php?id=4" class="btn-small">View Details</a>
+        </div>
+    </div>
+</section>
+
+<!-- Most Reviewed Restaurants Section -->
+<section id="top-restaurants" class="top-restaurants">
+    <div class="section-header">
+        <h2>🍽️ Top Rated Restaurants</h2>
+        <p>Where foodies are dining in Kenya</p>
+    </div>
+    
+    <div class="cards">
+        <!-- PHP code for restaurants -->
+        <?php
+        /*
+        try {
+            $stmt = $pdo->query("
+                SELECT r.*, COUNT(rev.id) as review_count, AVG(rev.rating) as avg_rating
+                FROM restaurants r 
+                LEFT JOIN reviews rev ON r.id = rev.restaurant_id 
+                GROUP BY r.id 
+                ORDER BY review_count DESC, avg_rating DESC 
+                LIMIT 3
+            ");
+            
+            while($restaurant = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                // Similar card structure as attractions
+            }
+        } catch(PDOException $e) {
+            // Fallback to static content
+        }
+        */
+        ?>
+        
+        <!-- Fallback static content -->
+        <div class="card">
+            <img src="images/carnivore.jpg" alt="Carnivore Restaurant">
+            <div class="card-badge">215 reviews</div>
+            <h3>Carnivore Restaurant</h3>
+            <div class="rating">
+                ★★★★★ <span class="rating-text">4.7/5</span>
+            </div>
+            <p>Famous for its meat-centric menu and "beast of a feast".</p>
+            <a href="restaurant_details.php?id=1" class="btn-small">View Details</a>
+        </div>
+        <div class="card">
+            <img src="images/tamarind.jpg" alt="Tamarind Restaurant">
+            <div class="card-badge">189 reviews</div>
+            <h3>Tamarind Restaurant</h3>
+            <div class="rating">
+                ★★★★☆ <span class="rating-text">4.5/5</span>
+            </div>
+            <p>Upscale seafood with stunning views in Mombasa.</p>
+            <a href="restaurant_details.php?id=2" class="btn-small">View Details</a>
+        </div>
+        <div class="card">
+            <img src="images/java-house.jpeg" alt="Java House">
+            <div class="card-badge">342 reviews</div>
+            <h3>Java House</h3>
+            <div class="rating">
+                ★★★★☆ <span class="rating-text">4.3/5</span>
+            </div>
+            <p>Popular coffee chain with great breakfast options.</p>
+            <a href="restaurant_details.php?id=3" class="btn-small">View Details</a>
+        </div>
+    </div>
+</section>
+
+<!-- Recommended For You Section (Personalized) -->
+<section id="recommended" class="recommended">
+    <div class="section-header">
+        <h2>💫 Recommended For You</h2>
+        <p>Personalized picks based on your interests</p>
+    </div>
+    
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchRecommendationTab('attractions')">Attractions</button>
+        <button class="tab-btn" onclick="switchRecommendationTab('restaurants')">Restaurants</button>
+    </div>
+    
+    <!-- Recommended Attractions Tab -->
+    <div id="recommended-attractions" class="tab-content active">
+        <div class="cards">
+            <div class="card">
+                <img src="images/hells-gate.jpeg" alt="Hell's Gate National Park">
+                <div class="card-badge">Recommended</div>
+                <h3>Hell's Gate National Park</h3>
+                <p>Perfect for hiking and cycling enthusiasts. No predators make it safe for walking.</p>
+                <a href="attraction_details.php?id=5" class="btn-small">Explore</a>
+            </div>
+             <div class="card">
+                <img src="images/fort-jesus.jpeg" alt="Fort Jesus">
+                <div class="card-badge">Historical</div>
+                <h3>Fort Jesus</h3>
+                <p>16th-century Portuguese fort, a UNESCO World Heritage site in Mombasa.</p>
+                <a href="attraction_details.php?id=25" class="btn-small">Explore</a>
+            </div>
+            <div class="card">
+                <img src="images/tsavo-east.jpeg" alt="Tsavo East">
+                <div class="card-badge">Adventure</div>
+                <h3>Tsavo East National Park</h3>
+                <p>One of Kenya's largest parks, home to the famous "red elephants".</p>
+                <a href="attraction_details.php?id=7" class="btn-small">Explore</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Recommended Restaurants Tab -->
+    <div id="recommended-restaurants" class="tab-content">
+        <div class="cards">
+            <div class="card">
+                <img src="images/talisman.jpg" alt="The Talisman">
+                <div class="card-badge">Local Favorite</div>
+                <h3>The Talisman</h3>
+                <p>Eclectic menu in a beautiful garden setting in Karen, Nairobi.</p>
+                <a href="restaurant_details.php?id=4" class="btn-small">View Menu</a>
+            </div>
+            <div class="card">
+                <img src="images/artcaffe.jpg" alt="Artcaffe">
+                <div class="card-badge">Trending</div>
+                <h3>Artcaffe</h3>
+                <p>Modern cafe with artisanal coffee, bakery, and bistro menu.</p>
+                <a href="restaurant_details.php?id=5" class="btn-small">View Menu</a>
+            </div>
+            <div class="card">
+                <img src="images/habesha.jpg" alt="Habesha Restaurant">
+                <div class="card-badge">Hidden Gem</div>
+                <h3>Habesha Ethiopian Restaurant</h3>
+                <p>Authentic Ethiopian cuisine with traditional coffee ceremony.</p>
+                <a href="restaurant_details.php?id=6" class="btn-small">View Menu</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section-footer">
+        <a href="recommend_attraction.php" class="btn-secondary">Get More Attraction Recommendations</a>
+        <a href="recommend_restaurant.php" class="btn-secondary">Get Restaurant Recommendations</a>
+    </div>
+</section>
+
 <!-- Footer -->
 <footer>
     <p>&copy; 2025 LJ-CR7 KenyaTour. All rights reserved.</p>

@@ -67,6 +67,25 @@ function switchToLogin() {
     openTab(null, 'loginTab');
 }
 
+// ========== RECOMMENDATION TAB FUNCTIONS ==========
+function switchRecommendationTab(tabName) {
+    // Hide all tab contents
+    document.querySelectorAll('#recommended .tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Remove active class from all tab buttons
+    document.querySelectorAll('#recommended .tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Show selected tab
+    document.getElementById('recommended-' + tabName).classList.add('active');
+    
+    // Activate clicked button
+    event.currentTarget.classList.add('active');
+}
+
 // ========== PASSWORD FUNCTIONS ==========
 function togglePassword(inputId, checkbox) {
     const passwordInput = document.getElementById(inputId);
@@ -490,5 +509,31 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             initUserDropdown();
         }, 100);
+    }
+    
+    // Initialize recommendation tabs
+    const recommendedSection = document.getElementById('recommended');
+    if (recommendedSection) {
+        // Default to attractions tab
+        const attractionsTab = document.getElementById('recommended-attractions');
+        const restaurantsTab = document.getElementById('recommended-restaurants');
+        const tabButtons = recommendedSection.querySelectorAll('.tab-btn');
+        
+        if (attractionsTab && restaurantsTab && tabButtons.length > 0) {
+            // Set default active tab
+            attractionsTab.classList.add('active');
+            tabButtons[0].classList.add('active');
+            
+            // Ensure restaurants tab is hidden
+            restaurantsTab.classList.remove('active');
+            
+            // Add event listeners to tab buttons
+            tabButtons.forEach((btn, index) => {
+                btn.addEventListener('click', function(e) {
+                    const tabName = index === 0 ? 'attractions' : 'restaurants';
+                    switchRecommendationTab(tabName);
+                });
+            });
+        }
     }
 });
