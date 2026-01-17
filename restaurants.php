@@ -1,5 +1,7 @@
 <?php
 // restaurants.php
+
+
 include 'db.php';
 include 'restaurant_functions.php';
 

@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenya Tourist Review</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="auth.css"> <!-- Add auth.css -->
     
     <!-- JavaScript for Authentication -->
     <script src="auth.js" defer></script>
+    <script src="map_search.js"></script>
     <!-- 'defer' makes it execute after HTML is parsed -->
 </head>
 <body>
@@ -63,7 +66,9 @@
             </li>
 
              <!-- Change this in your index.php navigation -->
-            <li><a href="#" onclick="openAuthModal(); return false;">Login</a></li>
+            <li class="auth-link">
+                <a href="#" onclick="openAuthModal(); return false;">Login</a>
+            </li>
         </ul>
     </nav>
 </header>

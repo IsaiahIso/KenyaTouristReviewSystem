@@ -1,5 +1,6 @@
 <?php
 // recommend_attraction.php
+require_once 'auth_guard.php';
 include 'db.php';
 
 $message = '';

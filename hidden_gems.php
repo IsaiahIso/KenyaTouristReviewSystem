@@ -1,5 +1,6 @@
 <?php
 // hidden_gems.php
+require_once 'auth_guard.php';
 include 'db.php';
 
 // Fetch approved hidden gems to display

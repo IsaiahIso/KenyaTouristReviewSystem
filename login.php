@@ -44,9 +44,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
             
             // Redirect admin to dashboard
-            if ($user['role'] === 'admin') {
-                $response['redirect'] = 'admin_dashboard.php';
-            }
+            // Handle redirect after login
+if ($user['role'] === 'admin') {
+    $response['redirect'] = 'admin_dashboard.php';
+} elseif (isset($_SESSION['redirect_after_login'])) {
+    $response['redirect'] = $_SESSION['redirect_after_login'];
+    unset($_SESSION['redirect_after_login']);
+} else {
+    $response['redirect'] = 'index.php';
+}
         } else {
             $response['message'] = 'Invalid password';
         }

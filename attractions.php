@@ -1,11 +1,6 @@
 <?php
 // attractions.php
-session_start();
 
-if(!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
 include 'db.php';
 
 // Get attraction type from URL
@@ -54,9 +49,7 @@ $result = mysqli_query($conn, $sql);
     <div class="type-selector">
         <h3>Browse Attractions:</h3>
         <div class="type-buttons">
-            <a href="attractions.php?type=park" class="type-btn <?php echo $type == 'park' ? 'active' : ''; ?>">
-                National Parks
-            </a>
+            <a href="attractions.php?type=park">National Parks</a>
             <a href="attractions.php?type=beach" class="type-btn <?php echo $type == 'beach' ? 'active' : ''; ?>">
                 Beaches
             </a>
